@@ -2,8 +2,8 @@
 	"authors": [
 		"Ramon Santamaria"
 	],
+    "preBuildCommands": ["dub run raylib-d:install -- -u=no"],
     "dependencies" : {
-        "raylib-d" : "~>5.0.1"
         "raygui-d" : {
             "path" : "../"
         }
@@ -13,6 +13,5 @@
 	"name": "rayguiexample",
         "libs": ["raylib"],
         "lflags-posix": ["-L."],
-        "lflags-osx": ["-rpath", "@executable_path/"],
-        "buildOptions": ["betterC"]
+        "lflags-osx": ["-rpath", "@executable_path/"]
 }
