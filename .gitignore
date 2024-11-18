@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+*.dylib
+*.dll
+*.a
+*.lib
+raygui-d-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

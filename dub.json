@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Steven Schveighoffer"
+	],
+	"copyright": "Copyright © 2024, Ramon Santamaria (@raysan5), Steven Schveighoffer (@schveiguy)",
+	"dependencies": {
+		"raylib-d": "~>5.0.1"
+	},
+	"description": "A D port raygui using ctod",
+	"license": "Zlib",
+	"name": "raygui-d"
+}

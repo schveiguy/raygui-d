@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/rayguiexample
+rayguiexample.so
+rayguiexample.dylib
+rayguiexample.dll
+rayguiexample.a
+rayguiexample.lib
+rayguiexample-test-*
+*.exe
+*.o
+*.obj
+*.lst
