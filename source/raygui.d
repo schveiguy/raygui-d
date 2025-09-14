@@ -324,6 +324,15 @@ enum RAYGUI_VERSION_PATCH = 0;
 enum RAYGUI_VERSION =  "4.0";
 
 import raylib;
+// NOTE: these were down at the implementation level, but due to 
+// https://github.com/dlang/dmd/issues/21857 they have to come before the place where
+// the symbols are used.
+public import core.stdc.stdio;              // Required for: FILE, fopen(), fclose(), fprintf(), feof(), fscanf(), vsprintf() [GuiLoadStyle(), GuiLoadIcons()]
+public import core.stdc.stdlib;             // Required for: malloc(), calloc(), free() [GuiLoadStyle(), GuiLoadIcons()]
+public import core.stdc.string;             // Required for: strlen() [GuiTextBox(), GuiValueBox()], memset(), memcpy()
+public import core.stdc.stdarg;             // Required for: va_list, va_start(), vfprintf(), va_end() [TextFormat()]
+public import core.stdc.math;               // Required for: roundf() [GuiColorPicker()]
+
 
 //----------------------------------------------------------------------------------
 // Defines and Macros
@@ -1244,12 +1253,6 @@ alias ICON_255 = GuiIconName.ICON_255;
 *   RAYGUI IMPLEMENTATION
 *
 ************************************************************************************/
-
-public import core.stdc.stdio;              // Required for: FILE, fopen(), fclose(), fprintf(), feof(), fscanf(), vsprintf() [GuiLoadStyle(), GuiLoadIcons()]
-public import core.stdc.stdlib;             // Required for: malloc(), calloc(), free() [GuiLoadStyle(), GuiLoadIcons()]
-public import core.stdc.string;             // Required for: strlen() [GuiTextBox(), GuiValueBox()], memset(), memcpy()
-public import core.stdc.stdarg;             // Required for: va_list, va_start(), vfprintf(), va_end() [TextFormat()]
-public import core.stdc.math;               // Required for: roundf() [GuiColorPicker()]
 
 // Check if two rectangles are equal, used to validate a slider bounds as an id
 version (CHECK_BOUNDS_ID) {} else {
